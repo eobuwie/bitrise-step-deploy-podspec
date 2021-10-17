@@ -1,0 +1,51 @@
+title: |-
+  Deploy Podspec
+summary: |
+  Deploy podspec to private podspec repo.
+description: |
+  Deploy podspec to private podspec repo.
+website: https://github.com/orbitekk/bitrise-step-deploy-podspec.git
+source_code_url: https://github.com/orbitekk/bitrise-step-deploy-podspec.git
+support_url: https://github.com/orbitekk/bitrise-step-deploy-podspec.git
+host_os_tags:
+  - osx-10.10
+
+project_type_tags:
+  - ios
+  - macos
+
+type_tags:
+  - deploy
+
+is_requires_admin_user: true
+is_always_run: false
+is_skippable: false
+run_if: ""
+
+toolkit:
+  bash:
+    entry_file: step.sh
+
+inputs:
+  - podspec:
+    opts:
+      title: "Podspec path"
+      summary: ""
+      description: |
+        Podspec file path.
+      is_required: true
+  - repo_name:
+    opts:
+      title: Podspec repo name
+      summary: ""
+      is_required: true
+  - podspec_repo_url:
+    opts:
+      title: Podspec repo URL
+      summary: ""
+      is_required: true
+  - podspec_sources: trunk
+    opts:
+      title: Podspec sources
+      summary: "Podspec repositories"
+      is_required: true
