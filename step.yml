@@ -22,6 +22,10 @@ is_always_run: false
 is_skippable: false
 run_if: ""
 
+deps:
+  brew:
+    - name: jq
+
 toolkit:
   bash:
     entry_file: step.sh
@@ -49,3 +53,10 @@ inputs:
       title: Podspec sources
       summary: "Podspec repositories"
       is_required: true
+  - skip_validation: "no"
+    opts:
+      title: "Skip podspec validation"
+      is_required: true
+      value_options:
+        - "no"
+        - "yes"
